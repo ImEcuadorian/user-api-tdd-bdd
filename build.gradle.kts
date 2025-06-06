@@ -9,7 +9,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(24)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
@@ -21,6 +21,7 @@ val cucumberVersion = "7.22.2"
 val mockitoVersion = "5.18.0"
 val junitPlatformVersion = "1.12.1"
 val junitVersion = "5.12.1"
+val junitPlatformSuiteVersion = "1.13.0"
 
 dependencies {
 
@@ -29,7 +30,7 @@ dependencies {
 
     testImplementation("io.cucumber:cucumber-junit-platform-engine:$cucumberVersion")
     testImplementation("org.mockito:mockito-core:$mockitoVersion")
-    testImplementation("org.junit.platform:junit-platform-suite-api:1.13.0")
+    testImplementation("org.junit.platform:junit-platform-suite-api:$junitPlatformSuiteVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test"){
         exclude(module = "junit")
     }
