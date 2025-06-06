@@ -1,0 +1,29 @@
+name: Java CI + TDD + BDD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4.2.2
+
+      - name: Set up Java
+        uses: actions/setup-java@v4.2.2
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Grant permission to execute Gradle
+        run: chmod +x ./gradlew
+
+      - name: Run Unit Tests (TDD)
+        run: ./gradlew test
+
+      - name: Run BDD Tests (Cucumber)
+        run: ./gradlew cucumber
