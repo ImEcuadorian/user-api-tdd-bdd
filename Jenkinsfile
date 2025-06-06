@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         jdk 'jdk-21'
-        gradle 'gradle-8'
+        gradle 'gradle-8.14.1'
     }
 
     environment {
